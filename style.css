@@ -61,7 +61,7 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  max-width: 900px;
+  max-width: 800px;
   gap: 1rem;
   margin: 1em auto;
 }
@@ -128,6 +128,7 @@ main {
 /* Banners */
 .banner-container {
   margin: 1em auto;
+  padding: 1em;
 }
 
 .banner {
@@ -146,7 +147,6 @@ main {
   display: flex;
   gap: 1rem;
   align-items: center;
-  margin-bottom: 0.5rem;
 }
 
 .banner-message {
@@ -156,6 +156,7 @@ main {
 }
 
 .banner-children {
+  margin-top: 0.5rem;
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;

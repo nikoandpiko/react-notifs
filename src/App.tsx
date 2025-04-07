@@ -1,6 +1,7 @@
 import React from 'react'
 import { ThemeProvider } from './contexts/ThemeContext'
 import { Badge, Banner, Card, ThemeToggle, ThemedWrapper } from './components'
+import { FiAperture } from 'react-icons/fi'
 
 const App: React.FC = () => {
   return (
@@ -88,12 +89,11 @@ const App: React.FC = () => {
 
           <section className="card-container">
             <Card title="Easy Deployment">
-              Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi
-              lobortis.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, quo.
             </Card>
-            <Card title="Simple Deployment">
-              Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi
-              lobortis dim sum choi.
+            <Card title="Security First" icon={<FiAperture size={52} aria-hidden="true" />}>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid eveniet quia facilis
+              natus eum eaque ullam sapiente possimus mollitia itaque.
             </Card>
           </section>
         </main>
