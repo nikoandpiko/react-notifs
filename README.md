@@ -69,7 +69,7 @@ Cards display content and actions about a single subject.
 
 - `title`: The card title
 - `children`: The card content
-- `icon`: Optional custom icon component
+- `icon`: (Optional) Custom icon component
 
 ## Development
 
