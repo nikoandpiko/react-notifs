@@ -35,10 +35,11 @@ const App: React.FC = () => {
               Badge
             </Badge>
             <Badge shape="square">Badge</Badge>
-
+            
             <Badge color="gray" shape="pill">
-              Badge
+              <Badge.Label label="Custom Badge Text" />
             </Badge>
+            
             <Badge color="red" shape="pill">
               Badge
             </Badge>
@@ -81,7 +82,7 @@ const App: React.FC = () => {
               similique veniam.
             </Banner>
 
-            <Banner type="success" line="singleline" />
+            <Banner type="success" line="singleline" message="Custom success message" />
             <Banner type="warning" line="singleline" />
             <Banner type="error" line="singleline" />
             <Banner type="neutral" line="singleline" />

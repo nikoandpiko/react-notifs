@@ -6,6 +6,7 @@ interface BannerProps {
   type: BannerType
   line: BannerLine
   children?: React.ReactNode
+  message?: string
 }
 
 const defaultMessages: Record<BannerType, string> = {
@@ -15,7 +16,7 @@ const defaultMessages: Record<BannerType, string> = {
   neutral: 'Note: This is a neutral informational message.',
 }
 
-const Banner: React.FC<BannerProps> = ({ type, line, children }) => {
+const Banner: React.FC<BannerProps> = ({ type, line, children, message }) => {
   const getIcon = () => {
     switch (type) {
       case 'success':
@@ -35,7 +36,7 @@ const Banner: React.FC<BannerProps> = ({ type, line, children }) => {
     <div className={`banner banner-${type}`} role="alert">
       <div className="banner-message-wrapper">
         {getIcon()}
-        <span className="banner-message">{defaultMessages[type]}</span>
+        <span className="banner-message">{message || defaultMessages[type]}</span>
       </div>
       {line === 'multiline' && children && <div className="banner-children">{children}</div>}
     </div>
