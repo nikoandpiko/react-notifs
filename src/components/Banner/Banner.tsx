@@ -16,7 +16,7 @@ const defaultMessages: Record<BannerType, string> = {
   neutral: 'Note: This is a neutral informational message.',
 }
 
-const Banner: React.FC<BannerProps> = ({ type, line, children, message }) => {
+const Banner = ({ type, line, children, message }: BannerProps) => {
   const getIcon = () => {
     switch (type) {
       case 'success':
@@ -27,13 +27,13 @@ const Banner: React.FC<BannerProps> = ({ type, line, children, message }) => {
         return <FiXCircle className="banner-icon" aria-hidden="true" />
       case 'neutral':
         return <FiInfo className="banner-icon" aria-hidden="true" />
-      default:
-        return null
     }
   }
 
+  const ariaLive = type === 'error' ? 'assertive' : 'polite'
+
   return (
-    <div className={`banner banner-${type}`} role="alert">
+    <div className={`banner banner-${type}`} role="alert" aria-live={ariaLive}>
       <div className="banner-message-wrapper">
         {getIcon()}
         <span className="banner-message">{message || defaultMessages[type]}</span>
@@ -43,4 +43,7 @@ const Banner: React.FC<BannerProps> = ({ type, line, children, message }) => {
   )
 }
 
-export default Banner
+const MemoizedBanner = React.memo(Banner)
+MemoizedBanner.displayName = 'Banner'
+
+export default MemoizedBanner

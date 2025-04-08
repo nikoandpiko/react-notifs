@@ -37,16 +37,6 @@
   --banner-neutral-text: #1e3a8a;
 }
 
-/* Light theme */
-body.theme-light,
-html.theme-light {
-  --bg-primary: #ffffff;
-  --text-primary: #1f2937;
-  --card-bg: #f9fafb;
-  --card-border: rgba(0, 0, 0, 0.1);
-}
-
-/* Dark theme */
 body.theme-dark,
 html.theme-dark {
   --bg-primary: #1f2937;
@@ -118,47 +108,47 @@ main {
   border-radius: 12px;
 }
 
-.btn-gray {
+.badge-gray {
   background-color: var(--badge-gray-bg);
   color: var(--badge-gray-text);
 }
 
-.btn-red {
+.badge-red {
   background-color: var(--badge-red-bg);
   color: var(--badge-red-text);
 }
 
-.btn-yellow {
+.badge-yellow {
   background-color: var(--badge-yellow-bg);
   color: var(--badge-yellow-text);
 }
 
-.btn-green {
+.badge-green {
   background-color: var(--badge-green-bg);
   color: var(--badge-green-text);
 }
 
-.btn-blue {
+.badge-blue {
   background-color: var(--badge-blue-bg);
   color: var(--badge-blue-text);
 }
 
-.btn-indigo {
+.badge-indigo {
   background-color: var(--badge-indigo-bg);
   color: var(--badge-indigo-text);
 }
 
-.btn-purple {
+.badge-purple {
   background-color: var(--badge-purple-bg);
   color: var(--badge-purple-text);
 }
 
-.btn-pink {
+.badge-pink {
   background-color: var(--badge-pink-bg);
   color: var(--badge-pink-text);
 }
 
-.btn-white {
+.badge-white {
   background-color: var(--badge-white-bg);
   color: var(--badge-white-text);
 }
@@ -290,4 +280,13 @@ main {
 
 .theme-toggle:hover {
   transform: scale(1.1);
+}
+
+.theme-toggle:focus {
+  outline: 2px solid var(--text-primary);
+  outline-offset: 2px;
+}
+
+.theme-toggle:focus:not(:focus-visible) {
+  outline: none;
 }

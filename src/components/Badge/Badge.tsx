@@ -13,33 +13,33 @@ interface BadgeLabelProps {
 
 interface BadgeIconProps {
   icon: string
+  alt?: string
 }
 
 export const BadgeLabel: React.FC<BadgeLabelProps> = ({ label }) => {
   return <span className="badge-label">{label}</span>
 }
 
-export const BadgeIcon: React.FC<BadgeIconProps> = ({ icon }) => {
-  return <img className="badge-icon" src={icon} alt="icon" />
+export const BadgeIcon: React.FC<BadgeIconProps> = ({ icon, alt = '' }) => {
+  return <img className="badge-icon" src={icon} alt={alt} aria-hidden={!alt} />
 }
 
-const BadgeComponent: React.FC<BadgeProps> = ({ 
-  children,
-  color = 'white',
-  shape = 'pill',
-}) => {
-  const badgeClasses = ['badge', `badge-${shape}`, `btn-${color}`].join(' ')
+const BadgeComponent: React.FC<BadgeProps> = ({ children, color = 'white', shape = 'pill' }) => {
+  const badgeClasses = ['badge', `badge-${shape}`, `badge-${color}`].join(' ')
 
   return <span className={badgeClasses}>{children}</span>
 }
 
-const Badge = memo(BadgeComponent) as unknown as React.FC<BadgeProps> & { 
+type BadgeComponentType = React.FC<BadgeProps> & {
   Label: typeof BadgeLabel
   Icon: typeof BadgeIcon
 }
 
+const Badge: BadgeComponentType = Object.assign(memo(BadgeComponent), {
+  Label: BadgeLabel,
+  Icon: BadgeIcon,
+})
+
 Badge.displayName = 'Badge'
-Badge.Label = BadgeLabel
-Badge.Icon = BadgeIcon
 
 export default Badge

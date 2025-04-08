@@ -18,4 +18,7 @@ const ThemedWrapper: React.FC<ThemedWrapperProps> = ({ children }) => {
   return <>{children}</>
 }
 
-export default ThemedWrapper
+const MemoizedThemedWrapper = React.memo(ThemedWrapper)
+MemoizedThemedWrapper.displayName = 'ThemedWrapper'
+
+export default MemoizedThemedWrapper

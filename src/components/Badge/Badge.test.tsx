@@ -10,7 +10,7 @@ describe('Badge component', () => {
   test('applies correct color class', () => {
     render(<Badge color="blue">Blue Badge</Badge>)
     const badge = screen.getByText('Blue Badge')
-    expect(badge).toHaveClass('btn-blue')
+    expect(badge).toHaveClass('badge-blue')
   })
 
   test('applies correct shape class', () => {
@@ -23,7 +23,7 @@ describe('Badge component', () => {
     render(<Badge>Default Badge</Badge>)
     const badge = screen.getByText('Default Badge')
     expect(badge).toHaveClass('badge-pill')
-    expect(badge).toHaveClass('btn-white')
+    expect(badge).toHaveClass('badge-white')
   })
 
   test('renders Badge.Label correctly', () => {

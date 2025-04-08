@@ -7,16 +7,17 @@ interface CardProps {
   icon?: React.ReactNode
 }
 
-const Card: React.FC<CardProps> = memo(({ title, children, icon }) => {
+const CardComponent: React.FC<CardProps> = ({ title, children, icon }) => {
   return (
     <div className="card">
-      <div className="card-icon">{icon || <FiPackage size={58} aria-hidden="true" />}</div>
+      <div className="card-icon">{icon || <FiPackage size={52} aria-hidden="true" />}</div>
       <h3 className="card-title">{title}</h3>
       <div className="card-children">{children}</div>
     </div>
   )
-})
+}
 
+const Card = memo(CardComponent)
 Card.displayName = 'Card'
 
 export default Card
