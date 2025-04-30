@@ -17,3 +17,5 @@ jobs:
 
       - name: Merge Dependabot PR
         uses: pascalgn/automerge-action@v0.15.4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
